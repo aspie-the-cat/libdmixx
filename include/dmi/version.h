@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: MIT
 // SPDX-FileCopyrightText: (c) 2025, Dmitry Novikov <cat@aspie.ru>
 //
-#ifndef LIBDMIXX_DMI_VERSION_H
-#define LIBDMIXX_DMI_VERSION_H
+#ifndef LIBDMIXX_VERSION_H
+#define LIBDMIXX_VERSION_H
 
 #pragma once
 
@@ -12,12 +12,12 @@
 /**
  * @brief DMI version descriptor.
  */
-typedef struct dmi_version dmi_version_t;
+typedef struct dmi_version_id dmi_version_id_t;
 
 /**
  * @brief DMI version descriptor structure.
  */
-struct dmi_version
+struct dmi_version_id
 {
     /**
      * @brief SMBIOS major version.
@@ -54,9 +54,9 @@ struct dmi_version
 
 namespace dmi
 {
-    using version = ::dmi_version_t;
+    using version_id = ::dmi_version_id_t;
 }
 
 #endif // __cplusplus
 
-#endif // !LIBDMIXX_DMI_VERSION_H
+#endif // !LIBDMIXX_VERSION_H
