@@ -1,0 +1,12 @@
+= LibDMI++: Reference Manual
+:doctype: book
+:author: Dmitry Novikov
+:email: cat@aspie.ru
+:revnumber: 0.1.0
+:revdate: February 25, 2025
+:toc: auto
+:toclevels: 2
+:sectnums:
+:sectanchors:
+
+include::intro.adoc[]

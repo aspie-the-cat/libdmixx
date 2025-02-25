@@ -1,0 +1,81 @@
+= Introduction
+
+== References
+
+[horizontal, labelwidth=20, itemwidth=80]
+[SMBIOS]:: Distributed Management Task Force (DMTF), “System Management BIOS
+(SMBIOS) Reference Specification”, DMTF DSP0134, July 2023,
+<<https://www.dmtf.org/dsp/DSP0134>>.
+
+[UUID]:: Leach, P., Mealling, M., and Salz, R., “Universally Unique IDentifier
+(UUID) URN Namespace”, IETF RFC 4122, DOI 10.17487/RFC4122, July 2005,
+<<http://www.rfc-editor.org/info/rfc4122>>.
+
+[UUID2]:: Davis, K., Peabody, B., and Leach, P., “Universally Unique IDentifiers
+(UUIDs)”, IETF RFC 9562, DOI 10.17487/RFC9562, May 2024,
+<<http://www.rfc-editor.org/info/rfc9562>>.
+
+[KEYWORDS]:: Bradner, S., “Key words for use in RFCs to Indicate Requirement
+Levels”, IETF RFC 2119, DOO 10.17487/RFC2119, March 1997,
+<<http://www.rfc-editor.org/info/rfc2119>>.
+
+== Terms and definitions
+
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
+"SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
+interpreted as described in RFC 2119 [KEYWORDS].
+
+== Abbreviations
+
+[horizontal, labelwidth=20, itemwidth=80]
+AC:: Alternating Current
+ACPI:: Advanced Configuration and Power Interface
+AGP:: Accelerated Graphics Port
+APM:: Advanced Power Management
+ASCII:: American Standard Code for Information Interchange
+ATA:: Advanced Technology Attachment
+ATAPI:: ATA Packet Interface
+BCD:: Binary-Coded Decimal
+BIOS:: Basic Input/Output System
+BMC:: Baseboard Management Controller
+CGA:: Color Graphics Array
+CMOS:: Complementary Metal-Oxide Semiconductor. "CMOS" is commonly used as a
+shorthand for "CMOS RAM", the non-volatile RAM used on industry-standard PCs.
+CPU:: Central Processing Unit
+CRC:: Cyclic Redundancy Check
+DDC:: Display Data Channel
+DDR:: Double Data Rate SDRAM
+DIMM:: Dual In-line Memory Module
+DMA:: Direct Memory Access
+DMI:: Desktop Management Interface
+DRAM:: Dynamic RAM
+DSP:: Digital Signal Processing
+ECC:: Error Checking and Correction
+EDD:: Enhanced Disk Drive
+EDO:: Extended Data Out
+EEPROM:: Electrically Erasable PROM
+EISA:: Extended Industry Standard Architecture
+EPS:: Entry Point Structure
+IEPS:: Intermediate Entry Point Structure
+IRQ:: Interrupt Request
+ISA:: Industry Standard Architecture
+LSB:: Least Significant Bit
+MSB:: Most Significant Bit
+NMI:: Non-Maskable Interrupt
+NVRAM:: Non-Volatile RAM
+OEM:: Original Equipment Manufacturer
+OS:: Operating System
+PCI:: Peripheral Component Interconnect
+PCIe:: Peripheral Component Interconnect Express (PCI Express)
+PCMCIA:: Personal Computer Memory Card International Association
+PME:: Power Management Event
+PXE:: Pre-boot Execution Environment
+RAM:: Random Access Memory
+ROM:: Read-Only Memory
+SDRAM:: Synchronous DRAM
+SKU:: Stock-Keeping Unit
+SRAM:: Static RAM
+SMBIOS:: System Management BIOS
+UEFI:: Unified Extensible Firmware Interface
+USB:: Universal Serial Bus
+UUID:: Universally Unique Identifier
