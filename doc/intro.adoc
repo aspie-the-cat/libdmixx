@@ -16,7 +16,7 @@
 <<http://www.rfc-editor.org/info/rfc9562>>.
 
 [KEYWORDS]:: Bradner, S., “Key words for use in RFCs to Indicate Requirement
-Levels”, IETF RFC 2119, DOO 10.17487/RFC2119, March 1997,
+Levels”, IETF RFC 2119, DOI 10.17487/RFC2119, March 1997,
 <<http://www.rfc-editor.org/info/rfc2119>>.
 
 == Terms and definitions
