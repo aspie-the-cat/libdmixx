@@ -1,0 +1,6 @@
+build/
+Makefile
+CMakeFiles
+CMakeCache.txt
+*.cmake
+*.tcl
