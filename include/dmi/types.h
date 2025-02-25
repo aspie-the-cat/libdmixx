@@ -69,12 +69,12 @@ namespace dmi
     /**
      * @brief DMI table handle.
      */
-    using handle = ::dmi_handle_t;
+    using handle_t = ::dmi_handle_t;
 
     /**
      * @brief DMI table header.
      */
-    using header = ::dmi_header_t;
+    using header = struct ::dmi_header;
 };
 
 #endif // __cplusplus

@@ -7,9 +7,12 @@
 
 #pragma once
 
+#include <vector>
+#include <string>
+
 #include <dmi/types.h>
 
-enum dmi_table : uint8_t
+enum dmi_table_type : uint8_t
 {
     DMI_TABLE_BIOS                       = 0,
     DMI_TABLE_SYSTEM                     = 1,
@@ -62,13 +65,13 @@ enum dmi_table : uint8_t
     DMI_TABLE_END_OF_TABLE               = 127
 };
 
-typedef enum dmi_table dmi_table_t;
+typedef enum dmi_table_type dmi_table_type_t;
 
 #ifdef __cplusplus
 
 namespace dmi
 {
-    enum class table : uint8_t
+    enum class table_type : uint8_t
     {
         bios                      = DMI_TABLE_BIOS,
         system                    = DMI_TABLE_SYSTEM,
@@ -123,12 +126,23 @@ namespace dmi
 
     class basic_table
     {
+    protected:
+        handle_t m_handle;
+
     public:
         basic_table();
         virtual ~basic_table();
+
+        inline handle_t handle() const { return m_handle; }
     };
 }
 
 #endif // __cplusplus
+
+__BEGIN_DECLS
+
+const char *dmi_table_type_str(dmi_table_type_t value);
+
+__END_DECLS
 
 #endif // !LIBDMIXX_TABLE_H
