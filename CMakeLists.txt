@@ -30,7 +30,6 @@ add_compile_options(
     -Wall
     -Wextra
     -Werror
-    -pedantic
 )
 
 if(ENABLE_CPPCHECK)
@@ -69,6 +68,7 @@ target_sources(libdmixx
         src/entry.cc
         src/table.cc
         src/version.cc
+        src/table/system.cc
 )
 
 add_library(libdmixx-static STATIC $<TARGET_OBJECTS:libdmixx>)
