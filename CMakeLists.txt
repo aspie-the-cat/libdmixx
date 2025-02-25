@@ -82,3 +82,9 @@ set_target_properties(libdmixx-shared
     PROPERTIES
         OUTPUT_NAME dmi++
 )
+
+add_executable(dmidump)
+target_sources(dmidump
+    PRIVATE
+        src/dump.cc
+)
