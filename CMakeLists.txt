@@ -8,10 +8,16 @@ project(libdmi++
     VERSION 0.1.0
     DESCRIPTION "DMI/SMBIOS interface"
     HOMEPAGE_URL https://github.com/aspie-the-cat/libdmixx
-    LANGUAGES CXX)
+    LANGUAGES C CXX)
+
+option(ENABLE_CPPCHECK "Run CppCheck static code analysis")
+option(ENABLE_DOXYGEN "Run Doxygen documentation generator")
+option(ENABLE_ASCIIDOCTOR "Run AsciiDoctor documentation generator")
 
 set(CMAKE_COLOR_DIAGNOSTICS ON)
 
+set(CMAKE_C_STANDARD 23)
+set(CMAKE_C_EXTENSIONS ON)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_EXTENSIONS ON)
 
@@ -27,16 +33,22 @@ add_compile_options(
     -pedantic
 )
 
-find_program(CMAKE_CXX_CPPCHECK NAMES cppcheck REQUIRED)
-if(CMAKE_CXX_CPPCHECK)
-    list(APPEND
-        CMAKE_CXX_CPPCHECK
-            "--platform=native"
-            "--enable=all"
-            "--inconclusive"
-            "--inline-suppr"
-            "--verbose"
+if(ENABLE_CPPCHECK)
+    message(STATUS "Configuring CppCheck...")
+
+    find_program(CMAKE_CPPCHECK_EXECUTABLE NAMES cppcheck REQUIRED)
+
+    set(CMAKE_CPPCHECK_FLAGS
+        --platform=native
+        --enable=all
+        --inconclusive
+        --inline-suppr
+        --suppressions-list=${PROJECT_SOURCE_DIR}/cppcheck.supp
+        --verbose
     )
+
+    set(CMAKE_C_CPPCHECK ${CMAKE_CPPCHECK_EXECUTABLE} --std=c23 ${CMAKE_CPPCHECK_FLAGS})
+    set(CMAKE_CXX_CPPCHECK ${CMAKE_CPPCHECK_EXECUTABLE} --std=c++23 ${CMAKE_CPPCHECK_FLAGS})
 endif()
 
 include(CTest)
