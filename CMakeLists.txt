@@ -54,6 +54,9 @@ target_include_directories(libdmixx
 target_sources(libdmixx
     PRIVATE
         src/context.cc
+        src/entry.cc
+        src/table.cc
+        src/version.cc
 )
 
 add_library(libdmixx-static STATIC $<TARGET_OBJECTS:libdmixx>)

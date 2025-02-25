@@ -7,6 +7,8 @@
 
 #pragma once
 
+#include <dmi/types.h>
+
 namespace dmi
 {
     class context
