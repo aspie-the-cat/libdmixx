@@ -7,7 +7,7 @@ cmake_minimum_required(VERSION 3.30)
 project(libdmi-ng
     VERSION 0.1.0
     DESCRIPTION "DMI/SMBIOS interface"
-    HOMEPAGE_URL https://github.com/sky-ix/libdmi-ng
+    HOMEPAGE_URL https://github.com/sdnvx/libdmi-ng
     LANGUAGES C CXX)
 
 option(ENABLE_CPPCHECK "Run CppCheck static code analysis")
