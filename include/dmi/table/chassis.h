@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: MIT
 // SPDX-FileCopyrightText: (c) 2025, Dmitry Novikov <cat@aspie.ru>
 //
-#ifndef LIBDMIXX_TABLE_CHASSIS_H
-#define LIBDMIXX_TABLE_CHASSIS_H
+#ifndef DMI_TABLE_CHASSIS_H
+#define DMI_TABLE_CHASSIS_H
 
 #pragma once
 
@@ -143,4 +143,4 @@ namespace dmi::table
 
 #endif // __cplusplus
 
-#endif // !LIBDMIXX_TABLE_CHASSIS_H
+#endif // !DMI_TABLE_CHASSIS_H

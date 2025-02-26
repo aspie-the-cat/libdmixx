@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: MIT
 // SPDX-FileCopyrightText: (c) 2025, Dmitry Novikov <cat@aspie.ru>
 //
-#ifndef LIBDMIXX_ENTRY_H
-#define LIBDMIXX_ENTRY_H
+#ifndef DMI_ENTRY_H
+#define DMI_ENTRY_H
 
 #pragma once
 
@@ -348,4 +348,4 @@ namespace dmi
     };
 }
 
-#endif // !LIBDMIXX_ENTRY_H
+#endif // !DMI_ENTRY_H

@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: MIT
 // SPDX-FileCopyrightText: (c) 2025, Dmitry Novikov <cat@aspie.ru>
 //
-#ifndef LIBDMIXX_TABLE_H
-#define LIBDMIXX_TABLE_H
+#ifndef DMI_TABLE_H
+#define DMI_TABLE_H
 
 #pragma once
 
@@ -145,4 +145,4 @@ namespace dmi
 
 #endif // __cplusplus
 
-#endif // !LIBDMIXX_TABLE_H
+#endif // !DMI_TABLE_H

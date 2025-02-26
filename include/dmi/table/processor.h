@@ -2,9 +2,9 @@
 // SPDX-License-Identifier: MIT
 // SPDX-FileCopyrightText: (c) 2025, Dmitry Novikov <cat@aspie.ru>
 //
-#ifndef LIBDMIXX_TABLE_PROCESSOR_H
-#define LIBDMIXX_TABLE_PROCESSOR_H
+#ifndef DMI_TABLE_PROCESSOR_H
+#define DMI_TABLE_PROCESSOR_H
 
 #pragma once
 
-#endif // !LIBDMIXX_TABLE_PROCESSOR_H
+#endif // !DMI_TABLE_PROCESSOR_H
