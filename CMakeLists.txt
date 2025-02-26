@@ -4,10 +4,10 @@
 #
 cmake_minimum_required(VERSION 3.30)
 
-project(libdmi++
+project(libdmi-ng
     VERSION 0.1.0
     DESCRIPTION "DMI/SMBIOS interface"
-    HOMEPAGE_URL https://github.com/aspie-the-cat/libdmixx
+    HOMEPAGE_URL https://github.com/sky-ix/libdmi-ng
     LANGUAGES C CXX)
 
 option(ENABLE_CPPCHECK "Run CppCheck static code analysis")
@@ -53,16 +53,16 @@ endif()
 include(CTest)
 include(CPack)
 
-add_library(libdmixx OBJECT)
-set_target_properties(libdmixx
+add_library(dmi-ng OBJECT)
+set_target_properties(dmi-ng
     PROPERTIES
         POSITION_INDEPENDENT_CODE ON
 )
-target_include_directories(libdmixx
+target_include_directories(dmi-ng
     PUBLIC
         ${PROJECT_BINARY_DIR}/include
 )
-target_sources(libdmixx
+target_sources(dmi-ng
     PRIVATE
         src/context.cc
         src/entry.cc
@@ -73,20 +73,20 @@ target_sources(libdmixx
         src/table/cache.cc
 )
 
-add_library(libdmixx-static STATIC $<TARGET_OBJECTS:libdmixx>)
-set_target_properties(libdmixx-static
+add_library(dmi-ng-static STATIC $<TARGET_OBJECTS:dmi-ng>)
+set_target_properties(dmi-ng-static
     PROPERTIES
-        OUTPUT_NAME dmi++
+        OUTPUT_NAME dmi-ng
 )
 
-add_library(libdmixx-shared SHARED $<TARGET_OBJECTS:libdmixx>)
-set_target_properties(libdmixx-shared
+add_library(dmi-ng-shared SHARED $<TARGET_OBJECTS:dmi-ng>)
+set_target_properties(dmi-ng-shared
     PROPERTIES
-        OUTPUT_NAME dmi++
+        OUTPUT_NAME dmi-ng
 )
 
-add_executable(dmidump)
-target_sources(dmidump
+add_executable(dmi-dump)
+target_sources(dmi-dump
     PRIVATE
         src/dump.cc
 )
