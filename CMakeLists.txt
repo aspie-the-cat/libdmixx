@@ -69,6 +69,7 @@ target_sources(libdmixx
         src/table.cc
         src/version.cc
         src/table/system.cc
+        src/table/cache.cc
 )
 
 add_library(libdmixx-static STATIC $<TARGET_OBJECTS:libdmixx>)
