@@ -12,7 +12,7 @@
 
 #include <dmi/types.h>
 
-enum dmi_table_type : uint8_t
+typedef enum dmi_table_type : uint8_t
 {
     DMI_TABLE_BIOS                       = 0,
     DMI_TABLE_SYSTEM                     = 1,
@@ -63,9 +63,13 @@ enum dmi_table_type : uint8_t
     DMI_TABLE_STRING_PROPERTY            = 46,
     DMI_TABLE_INACTIVE                   = 126,
     DMI_TABLE_END_OF_TABLE               = 127
-};
+} dmi_table_type_t;
 
-typedef enum dmi_table_type dmi_table_type_t;
+__BEGIN_DECLS
+
+const char *dmi_table_type_str(dmi_table_type_t value);
+
+__END_DECLS
 
 #ifdef __cplusplus
 
@@ -124,6 +128,8 @@ namespace dmi
         end_of_table              = DMI_TABLE_END_OF_TABLE
     };
 
+    const std::string_view to_string(table_type value);
+
     class basic_table
     {
     protected:
@@ -138,11 +144,5 @@ namespace dmi
 }
 
 #endif // __cplusplus
-
-__BEGIN_DECLS
-
-const char *dmi_table_type_str(dmi_table_type_t value);
-
-__END_DECLS
 
 #endif // !LIBDMIXX_TABLE_H

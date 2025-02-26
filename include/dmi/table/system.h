@@ -12,21 +12,27 @@
 #include <string>
 #include <optional>
 
-enum dmi_system_wakeup : uint8_t
+/**
+ * @brief System wakeup types.
+ */
+typedef enum dmi_system_wakeup : uint8_t
 {
-    DMI_SYSTEM_WAKEUP_RESERVED     = 0x00,
-    DMI_SYSTEM_WAKEUP_OTHER        = 0x01,
-    DMI_SYSTEM_WAKEUP_UNKNOWN      = 0x02,
-    DMI_SYSTEM_WAKEUP_APM_TIMER    = 0x03,
-    DMI_SYSTEM_WAKEUP_MODEM_RING   = 0x04,
-    DMI_SYSTEM_WAKEUP_LAN_REMOTE   = 0x05,
-    DMI_SYSTEM_WAKEUP_POWER_SWITCH = 0x06,
-    DMI_SYSTEM_WAKEUP_PCI_PME      = 0x07,
-    DMI_SYSTEM_WAKEUP_AC_POWER     = 0x08
-};
+    DMI_SYSTEM_WAKEUP_RESERVED     = 0x00, //< Reserved
+    DMI_SYSTEM_WAKEUP_OTHER        = 0x01, //< Other
+    DMI_SYSTEM_WAKEUP_UNKNOWN      = 0x02, //< Unknown
+    DMI_SYSTEM_WAKEUP_APM_TIMER    = 0x03, //< APM timer
+    DMI_SYSTEM_WAKEUP_MODEM_RING   = 0x04, //< Modem ring
+    DMI_SYSTEM_WAKEUP_LAN_REMOTE   = 0x05, //< LAN remote
+    DMI_SYSTEM_WAKEUP_POWER_SWITCH = 0x06, //< Power switch
+    DMI_SYSTEM_WAKEUP_PCI_PME      = 0x07, //< PCI PME#
+    DMI_SYSTEM_WAKEUP_AC_POWER     = 0x08  //< AC power restored
+} dmi_system_wakeup_t;
 
-typedef enum dmi_system_wakeup dmi_system_wakeup_t;
-
+/**
+ * @brief System information table structure.
+ *
+ * @see ::dmi_system_table_t
+ */
 struct dmi_system_table
 {
     /**
@@ -145,22 +151,36 @@ struct dmi_system_table
     uint8_t family;
 } __attribute__((packed, aligned(1)));
 
+__BEGIN_DECLS
+
+const char *dmi_system_wakeup_str(dmi_system_wakeup_t value);
+
+__END_DECLS
+
 #ifdef __cplusplus
 
 namespace dmi::table
 {
+    /**
+     * @brief System wakeup types.
+     */
     enum class system_wakeup : uint8_t
     {
-        reserved     = DMI_SYSTEM_WAKEUP_RESERVED,
-        other        = DMI_SYSTEM_WAKEUP_OTHER,
-        unknown      = DMI_SYSTEM_WAKEUP_UNKNOWN,
-        apm_timer    = DMI_SYSTEM_WAKEUP_APM_TIMER,
-        modem_ring   = DMI_SYSTEM_WAKEUP_MODEM_RING,
-        lan_remote   = DMI_SYSTEM_WAKEUP_LAN_REMOTE,
-        power_switch = DMI_SYSTEM_WAKEUP_POWER_SWITCH,
-        pci_pme      = DMI_SYSTEM_WAKEUP_PCI_PME,
-        ac_power     = DMI_SYSTEM_WAKEUP_AC_POWER
+        reserved     = DMI_SYSTEM_WAKEUP_RESERVED,     //< Reserved
+        other        = DMI_SYSTEM_WAKEUP_OTHER,        //< Other
+        unknown      = DMI_SYSTEM_WAKEUP_UNKNOWN,      //< Unknown
+        apm_timer    = DMI_SYSTEM_WAKEUP_APM_TIMER,    //< APM timer
+        modem_ring   = DMI_SYSTEM_WAKEUP_MODEM_RING,   //< Modem ring
+        lan_remote   = DMI_SYSTEM_WAKEUP_LAN_REMOTE,   //< LAN remote
+        power_switch = DMI_SYSTEM_WAKEUP_POWER_SWITCH, //< Power switch
+        pci_pme      = DMI_SYSTEM_WAKEUP_PCI_PME,      //< PCI PME#
+        ac_power     = DMI_SYSTEM_WAKEUP_AC_POWER      //< AC power restored
     };
+
+    /**
+     * @throws std::invalid_argument
+     */
+    const std::string_view to_string(system_wakeup value);
 
     class system : public dmi::basic_table
     {
@@ -185,11 +205,5 @@ namespace dmi::table
 };
 
 #endif // __cplusplus
-
-__BEGIN_DECLS
-
-const char *dmi_system_wakeup_str(dmi_system_wakeup_t value);
-
-__END_DECLS
 
 #endif // !LIBDMIXX_TABLE_SYSTEM_H

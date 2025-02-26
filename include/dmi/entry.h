@@ -7,7 +7,13 @@
 
 #pragma once
 
+#include <string>
+#include <memory>
+#include <map>
+#include <filesystem>
+
 #include <dmi/types.h>
+#include <dmi/version.h>
 
 /**
  * @brief SMBIOS 2.0 or earlier (32-bit) entry point anchor string.
@@ -292,7 +298,7 @@ struct dmi_entry_v30
      * Table Address, in bytes. The actual size is guaranteed to be less or
      * equal to the maximum size.
      */
-    const uint32_t max_table_area_size;
+    const uint32_t table_area_size_max;
 
     /**
      * @brief Structure table address.
@@ -310,8 +316,35 @@ namespace dmi
     class entry
     {
     public:
-        entry();
+        entry(const std::string& anchor, const std::byte *data, size_t length);
         virtual ~entry();
+
+    public:
+        using factory =
+            std::unique_ptr<entry>(*)(const std::byte *ptr, size_t length);
+        static auto create(const std::byte *ptr, size_t length)
+            -> std::unique_ptr<entry>;
+    };
+
+    class entry_legacy : public entry
+    {
+    public:
+        entry_legacy(const std::byte *data, size_t length);
+        virtual ~entry_legacy();
+    };
+
+    class entry_v21 : public entry
+    {
+    public:
+        entry_v21(const std::byte *data, size_t length);
+        virtual ~entry_v21();
+    };
+
+    class entry_v30 : public entry
+    {
+    public:
+        entry_v30(const std::byte *data, size_t length);
+        virtual ~entry_v30();
     };
 }
 
