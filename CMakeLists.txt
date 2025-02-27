@@ -86,6 +86,7 @@ target_sources(dmi-ng
         src/table/system.cc
         src/table/chassis.cc
         src/table/cache.cc
+        src/table/cooling-device.cc
 )
 
 add_library(dmi-ng-static STATIC $<TARGET_OBJECTS:dmi-ng>)
