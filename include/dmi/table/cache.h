@@ -54,8 +54,8 @@ union dmi_cache_size
          * - `1` -- 64K granularity.
          */
         unsigned granularity : 1;
-    } __attribute((packed, aligned(1)));
-} __attribute__((packed, aligned(1)));
+    } __attribute((packed));
+} __attribute__((packed));
 
 static_assert(sizeof(dmi_cache_size) == sizeof(dmi_cache_size::value));
 
@@ -91,8 +91,8 @@ union dmi_cache_size_ex
          * @note Always `1` for cache sizes > 2047 MiB.
          */
         unsigned granularity : 1;
-    } __attribute((packed, aligned(1)));
-} __attribute__((packed, aligned(1)));
+    } __attribute((packed));
+} __attribute__((packed));
 
 static_assert(sizeof(dmi_cache_size_ex) == sizeof(dmi_cache_size_ex::value));
 
@@ -168,8 +168,8 @@ union dmi_cache_sram
         bool synchronous    : 1; //< Synchronous
         bool asynchronous   : 1; //< Asynchronous
         unsigned reserved   : 9; //< Reserved (must be zero)
-    } __attribute((packed, aligned(1)));
-} __attribute((packed, aligned(1)));
+    } __attribute((packed));
+} __attribute((packed));
 
 static_assert(sizeof(dmi_cache_sram) == sizeof(dmi_cache_sram::value));
 
@@ -268,8 +268,8 @@ union dmi_cache_config
          * @brief Reserved, must be zero.
          */
         unsigned reserved_2 : 6;
-    } __attribute__((packed, aligned(1)));
-} __attribute__((packed, aligned(1)));
+    } __attribute__((packed));
+} __attribute__((packed));
 
 static_assert(sizeof(dmi_cache_config) == sizeof(dmi_cache_config::value));
 
@@ -381,7 +381,7 @@ struct dmi_cache_table
      * @since SMBIOS 3.1
      */
     dmi_cache_size_ex_t installed_size_2;
-} __attribute__((packed, aligned(1)));
+} __attribute__((packed));
 
 /**
  * @see #dmi_cache_table

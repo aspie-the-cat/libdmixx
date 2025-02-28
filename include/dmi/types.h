@@ -60,7 +60,7 @@ struct dmi_header
      * applicable or does not exist.
      */
     dmi_handle_t handle;
-} __attribute__((packed, aligned(1)));
+} __attribute__((packed));
 
 #ifdef __cplusplus
 

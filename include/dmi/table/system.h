@@ -149,7 +149,7 @@ struct dmi_system_table
      * @since SMBIOS 2.4
      */
     uint8_t family;
-} __attribute__((packed, aligned(1)));
+} __attribute__((packed));
 
 __BEGIN_DECLS
 

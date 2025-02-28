@@ -123,7 +123,7 @@ struct dmi_cooling_device_table
      * @since SMBIOS 2.7
      */
     uint8_t description;
-} __attribute__((packed, aligned(1)));
+} __attribute__((packed));
 
 __BEGIN_DECLS
 

@@ -112,7 +112,7 @@ struct dmi_entry_legacy
      * information.
      */
     const uint8_t version;
-}  __attribute((packed, aligned(1)));
+}  __attribute((packed));
 
 /**
  * @brief The 32-bit SMBIOS 2.1+ Entry Point Structure (EPS).
@@ -206,7 +206,7 @@ struct dmi_entry_v21
      * @brief Intermediate Entry Point Structure (IEPS).
      */
     dmi_entry_legacy_t ieps;
-}  __attribute((packed, aligned(1)));
+}  __attribute((packed));
 
 /**
  * @brief The 64-bit SMBIOS 3.0+ Entry Point Structure (EPS).
@@ -309,7 +309,7 @@ struct dmi_entry_v30
      * the SMBIOS structures fully packed together.
      */
     const uint64_t table_area_addr;
-} __attribute((packed, aligned(1)));
+} __attribute((packed));
 
 namespace dmi
 {
